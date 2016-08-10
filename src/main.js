@@ -27,5 +27,6 @@ function fetchMarketData(symbol, duration) {
 }
 
 function addRows (symbol, cost, mv, gain) {
+  $('#cost-basis-total').append($('#port-value').val());
   $('#scroll-table').append('<tr><td class="security">' + symbol + '</td><td class="security-cost-basis">' + cost + '</td><td class="security-mv">' + mv + '</td><td class="gain">' + gain + '</td></tr>');
 }
