@@ -15,34 +15,39 @@
         <div class="col-md-8 col-sm-4">
           <h3 id="get-start">Get Started!</h3>
           <label for="portfolio-value">Select Initial Portfolio Value</label>
-          <input class ="form-control" type="text" name="portfolio-value" value="" placeholder="USD $000's" id="port-value">
+          <input class ="form-control" type="text" name="portfolio-value" value="1000" placeholder="USD $000's" id="port-value">
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-2">
           <label for="date-range">Select Start Date</label>
-          <input class="form-control input-sm" type="text" name="daterange" value="" placeholder="MM/DD/YYYY" id="date-start">
+          <input class="form-control input-sm" type="text" name="daterange" value="01/10/2013" placeholder="MM/DD/YYYY" id="date-start">
         </div>
         <div class="col-md-4 col-sm-2">
           <label for="date-range">Select End Date</label>
-          <input class="form-control input-sm" type="text" name="daterange" value="" placeholder="MM/DD/YYYY" id="date-finish">
+          <input class="form-control input-sm" type="text" name="daterange" value="01/10/2016" placeholder="MM/DD/YYYY" id="date-finish">
         </div>
       </div>
     <div class="row">
       <div class="col-md-8 col-sm-4">
         <label for="security-selection">Select a Security</label>
-        <input class="form-control" type="dropdown" name="security-selection" value="" placeholder="ex: AAPL" id="security">
+        <input class="form-control" type="dropdown" name="security-selection" value="AAPL" placeholder="ex: AAPL" id="security">
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 col-sm-4">
         <label for="portfolio-allocation">Select Portfolio Allocation (%)</label>
-        <input class="form-control" type="text" name="portfolio-allocation" value="" placeholder="ex: 5%" id="allocation">
+        <input class="form-control" type="text" name="portfolio-allocation" value="5" placeholder="ex: 5%" id="allocation">
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 col-sm-4">
-        <button class="btn btn-primary btn-lg btn-block" type="button" name="update" id="update-portfolio">Update Portfolio</button>
+        <button class="btn btn-primary btn-lg btn-block" type="button" name="update" id="update-portfolio">Add Security</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-sm-4">
+        <button class="btn btn-success btn-lg btn-block" type="button" name="update" id="update-portfolio">Finalize Portfolio</button>
       </div>
     </div>
   </section>

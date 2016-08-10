@@ -1,5 +1,3 @@
-
-
 function PlotChart(symbol, duration) {
 
     var params = {
@@ -33,6 +31,7 @@ function PlotChart(symbol, duration) {
     });
 
 };
+//define variable names more explicitly
 
 
 function createDataSet(datesArr, priceArr) {
@@ -49,6 +48,7 @@ function createDataSet(datesArr, priceArr) {
   });
 
 }
+//define function name more explicitly
 
 function getInputParams(symbol, duration) {
     return {
@@ -70,6 +70,7 @@ function getInputParams(symbol, duration) {
         //LabelInterval: 1
     }
 };
+//define function name more explicitly
 
 function render(data, symbol) {
   $('#chart-container').highcharts('StockChart', {
@@ -90,3 +91,5 @@ function render(data, symbol) {
     }]
   });
 }
+//define function name more explicitly
+//move these funcitons into utilities.js
