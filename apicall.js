@@ -9,7 +9,7 @@ function PlotChart(symbol, duration) {
       $("#chart-container").text("Generating Chart...");
     },
     data: params,
-    url: "http://dev.markitondemand.com/Api/v2/InteractiveChart/jsonp",
+    url: "https://dev.markitondemand.com/Api/v2/InteractiveChart/jsonp",
     dataType: "jsonp",
     context: this, })).then(function(json) {
       console.log('json', json)
