@@ -65,11 +65,11 @@ function calculateSum (sum) {
 
   function getWeightedReturns () {
     var weightArr = 0;
-    $('.new-row').each(function () {
-    var indWeight = $('.weight').text();
-    var indGain = $('.gain').text();
-    var weightGain = (parseFloat(indWeight) * parseFloat(indGain)) / 100;
-    weightArr += weightGain;
+    $('.new-row').each(function (i, row) {
+      var indWeight = $(row).children('.weight').text();
+      var indGain = $(row).children('.gain').text();
+      var weightGain = (parseFloat(indWeight) * parseFloat(indGain)) / 100;
+      weightArr += weightGain;
     })
     var finalPortVal = Math.floor($('#port-value').val() * (1 + (weightArr / 100)));
     $('#market-value-total').text('$' + finalPortVal);
