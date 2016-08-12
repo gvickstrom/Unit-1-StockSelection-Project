@@ -80,3 +80,12 @@ function getWeightedReturns() {
         $('.top-row').css("background-color", "#e52b09");
     }
 }
+
+//function to make the chart show when you hover over the ticker in the table
+
+function showChart () {
+  $('#scroll-table').on('mouseover', 'td', function () {
+    console.log('whatever');
+    // PlotChart('.security', duration);
+  })
+}
