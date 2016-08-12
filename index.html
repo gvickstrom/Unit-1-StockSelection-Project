@@ -8,98 +8,107 @@
   </head>
   <body>
     <header class="container-fluid text-left">
-      <h1>Portfolio Selection Screener</h1>
     </header>
+    <div class="container-fluid " id="main-body">
     <section id="left" class="col-md-6 col-sm-3">
       <div class="row">
         <div class="col-md-8 col-sm-4">
-          <h3 id="get-start">Get Started!</h3>
+          <h3 id="get-start">Coulda Woulda Shoulda...</h3>
           <label for="portfolio-value">Select Initial Portfolio Value</label>
-          <input class ="form-control" type="text" name="portfolio-value" value="" placeholder="USD $000's" id="port-value">
+          <input class ="form-control" type="text" name="portfolio-value" value="1000000" placeholder="USD $000's" id="port-value">
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-2">
-          <label for="date-range">Select Start Date</label>
-          <input class="form-control input-sm" type="text" name="daterange" value="" placeholder="MM/DD/YYYY" id="date-start">
+          <label for="date-range">Select Beginning Date</label>
+          <input class="form-control input-sm" type="text" name="daterange" value="03/09/2009" placeholder="MM/DD/YYYY" id="date-start">
         </div>
         <div class="col-md-4 col-sm-2">
           <label for="date-range">Select End Date</label>
-          <input class="form-control input-sm" type="text" name="daterange" value="" placeholder="MM/DD/YYYY" id="date-finish">
+          <input class="form-control input-sm" type="text" name="daterange" value="08/12/2016" placeholder="MM/DD/YYYY" id="date-finish">
         </div>
       </div>
     <div class="row">
       <div class="col-md-8 col-sm-4">
         <label for="security-selection">Select a Security</label>
-        <input class="form-control" type="dropdown" name="security-selection" value="" placeholder="ex: AAPL" id="security">
+        <input class="form-control" type="dropdown" name="security-selection" value="AAPL" placeholder="ex: AAPL" id="security">
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 col-sm-4">
         <label for="portfolio-allocation">Select Portfolio Allocation (%)</label>
-        <input class="form-control" type="text" name="portfolio-allocation" value="" placeholder="ex: 5%" id="allocation">
+        <input class="form-control" type="text" name="portfolio-allocation" value="25" placeholder="ex: 5%" id="allocation">
       </div>
     </div>
+    <br>
     <div class="row">
       <div class="col-md-8 col-sm-4">
-        <button class="btn btn-primary btn-lg btn-block" type="button" name="update" id="update-portfolio">Update Portfolio</button>
+        <button class="btn btn-primary btn-lg btn-block" type="button" name="update" id="add-security">Add Security</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-8 col-sm-4">
+        <button class="btn btn-success btn-lg btn-block" type="button" name="update" id="update-portfolio">Update Portfolio</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-8 col-sm-4">
+        <button class="btn btn-danger btn-lg btn-block" type="button" name="update" id="reset-portfolio">Reset</button>
       </div>
     </div>
   </section>
   <section id="right" class="col-md-6 col-sm-3">
     <div class="row">
-      <div class="col-md-12 col-sm-6" id="portfolio-table">
-        <table class="table table-striped table-bordered table-hover header-fixed" cellspacing="0" width="100%">
+      <div class="col-md-12 col-sm-6 vScrollTable" id="portfolio-table">
+        <table class="table table-striped table-bordered table-hover header-fixed vScrollTBody" cellspacing="0" width="100%" id="scroll-table">
           <thead>
-            <tr>
+            <tr id="labels">
               <th>Security</th>
+              <th>Portfolio Weight</th>
               <th>Cost Basis</th>
               <th>Market Value</th>
-              <th>% Gain(Loss)</th>
+              <th>Gain(Loss)</th>
             </tr>
           </thead>
           <tbody>
             <tr class="top-row">
-              <td>--</td>
-              <td id="cost-basis-total"><b></b></td>
-              <td id="market-value-total"><b></b></td>
-              <td id="return-total"><b></b></td>
+              <td class="col-md-2 col-sm-1">--</td>
+              <td class="col-md-2 col-sm-1" id="weight-total"><b></b></td>
+              <td class="col-md-2 col-sm-1" id="cost-basis-total"><b></b></td>
+              <td class="col-md-2 col-sm-1" id="market-value-total"><b></b></td>
+              <td class="col-md-2 col-sm-1" id="return-total"><b></b></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12 col-sm-6 vScrollTable">
-        <table class="table table-striped table-bordered table-hover vScrollTBody" id="scroll-table">
+        <table class="table table-striped table-bordered table-hover vScrollTBody" cellspacing="0" width="100%" id="scroll-table">
           <tbody>
           </tbody>
         </table>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-md-12 col-sm-6" style="height: 400px; min-width: 310px" id="chart-container">
 
       </div>
     </div>
   </section>
-
-
-
-
-
-    <div class="row">
-    <!-- <footer>
-      <div class="container">
+</div>
+    <footer class="container-fluid">
+      <div>
         <ul>
-          <li><a href="www.twitter.com">Twitter</a></li>
+          <li><a href="www.twitter.com/finance">Twitter</a></li>
           <li><a href="www.investopedia.com">Investopedia</a></li>
           <li><a href="www.bloomberg.com/markets">Bloomberg Markets</a></li>
           <li><a href="www.googlefinance.com">Google Finance</a></li>
         </ul>
       </div>
-    </footer> -->
-    </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
