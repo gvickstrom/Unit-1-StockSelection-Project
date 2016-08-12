@@ -1,38 +1,30 @@
-
-
 function PlotChart(symbol, duration) {
+  var params = {
+    parameters: JSON.stringify( getInputParams(symbol, duration) )
+  }
 
-    var params = {
-        parameters: JSON.stringify( getInputParams(symbol, duration) )
-    }
+  //Make JSON request for timeseries data
+  return Promise.resolve($.ajax({
+    beforeSend:function(){
+      $("#chart-container").text("Generating Chart...");
+    },
+    data: params,
+    url: "http://dev.markitondemand.com/Api/v2/InteractiveChart/jsonp",
+    dataType: "jsonp",
+    context: this, })).then(function(json) {
+      console.log('json', json)
+      var priceArr = json.Elements[0].DataSeries.close.values;
+      var data = createDataSet(json.Dates, priceArr);
+      render(data, symbol);
 
-    //Make JSON request for timeseries data
-    $.ajax({
-        beforeSend:function(){
-            $("#chart-container").text("Generating Chart...");
-        },
-        data: params,
-        url: "http://dev.markitondemand.com/Api/v2/InteractiveChart/jsonp",
-        dataType: "jsonp",
-        context: this,
-        success: function(json){
-            //Catch errors
-            if (!json || json.Message){
-                console.error("Error: ", json.Message);
-                return;
-            }
-            console.log('json', json);
-
-            var priceArr = json.Elements[0].DataSeries.close.values;
-            var data = createDataSet(json.Dates, priceArr);
-            render(data, symbol);
-        },
-        error: function(response,txtStatus){
-            console.log(response,txtStatus)
-        }
+      return priceArr;
+    }).catch(function(err) {
+      alert('Error')
     });
+}
 
-};
+
+
 
 
 function createDataSet(datesArr, priceArr) {
@@ -47,8 +39,8 @@ function createDataSet(datesArr, priceArr) {
   return datesArr.map(function(date, i) {
     return [ Date.parse(date), priceArr[i] ];
   });
-
 }
+
 
 function getInputParams(symbol, duration) {
     return {
