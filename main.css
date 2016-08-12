@@ -1,69 +1,54 @@
-
 * {
-  font-family: langdon;
+    font-family: langdon;
 }
-
-header  {
-  background-image: url("http://www.housingwire.com/ext/resources/images/editorial/Miscellaneous-Items/stock-copy.jpg?1376327729");
-  background-size: cover;
-  padding: 50px;
+header {
+    background-image: url("https://www.housingwire.com/ext/resources/images/editorial/Miscellaneous-Items/stock-copy.jpg?1376327729");
+    background-size: cover;
+    padding: 50px;
 }
-
 #main-body {
-  background-color: #4c4c4c;
+    background-color: #4c4c4c;
 }
-
 #get-start {
-  text-align: center;
-  color: #e5e5e5;
-  font-size: 36px;
+    text-align: center;
+    color: #e5e5e5;
+    font-size: 36px;
 }
-
 label {
-  color: #e5e5e5;
-  font-style: italic;
+    color: #e5e5e5;
+    font-style: italic;
 }
-
 #portfolio-table {
-  margin-bottom: 2px;
-  margin-top: 20px;
+    margin-bottom: 2px;
+    margin-top: 20px;
 }
-
 #labels {
-  background-color: #191919;
-  color: #e5e5e5;
-
+    background-color: #191919;
+    color: #e5e5e5;
 }
-
-#scroll-table > tbody > tr > td:last-child > button {
-  visibility: hidden;
+#scroll-table> tbody> tr> td:last-child> button {
+    visibility: hidden;
 }
-
-#scroll-table > tbody > tr:hover > td:last-child > button {
-  visibility: visible;
-  float: right;
-  color: red;
+#scroll-table> tbody> tr:hover> td:last-child> button {
+    visibility: visible;
+    float: right;
+    color: red;
 }
-
-#scroll-table > tbody {
-  background-color: #7f7f7f;
-  color: #191919;
+#scroll-table> tbody {
+    background-color: #7f7f7f;
+    color: #191919;
 }
-
 .vScrollTBody {
-  height:15px;
+    height: 15px;
 }
-
 .vScrollTable {
-  height:200px;
-  overflow-y:scroll;
+    height: 200px;
+    overflow-y: scroll;
 }
-
 #chart-container {
-  height: 200px;
-  width: 100%;
+    height: 200px;
+    width: 100%;
 }
-
 footer {
     position: absolute;
     /*bottom: 0;*/

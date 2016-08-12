@@ -15,10 +15,10 @@ $(function() {
         var weight = $('#allocation').val();
         //calls the API function based on dates and ticker and gets the current price of the specified stock and calls the addrow function
         fetchMarketData(symbol, duration).then(function(priceArr) {
-          var mv = priceArr.slice(-1);
-          var origPrice = priceArr[0];
-          var gain = Math.round((((mv - origPrice) / origPrice) * 100)) + '%';
-          addRows(symbol, weight, cost, mv, gain);
+            var mv = priceArr.slice(-1);
+            var origPrice = priceArr[0];
+            var gain = Math.round((((mv - origPrice) / origPrice) * 100)) + '%';
+            addRows(symbol, weight, cost, mv, gain);
         });
     });
 });
@@ -42,41 +42,41 @@ $('.vScrollTable').on('click', '.remove-btn', function() {
 });
 //function to reset the portfolio
 $('#reset-portfolio').on('click', function() {
-  location.reload();
-})
-//function to calculate total portfolio performance
+        location.reload();
+    })
+    //function to calculate total portfolio performance
 $('#update-portfolio').on('click', function() {
     calculateSum();
     getWeightedReturns();
 });
 
-function calculateSum (sum) {
-  var sum = 0;
-  $('.weight').each(function () {
-    var value = $(this).text();
-    sum += parseFloat(value);
-  });
-  if(sum !== 100) {
-    alert("Please make sure allocations add to 100%")
-  } else {
-    $('#weight-total').text(sum + '%');
-  };
-  }
+function calculateSum(sum) {
+    var sum = 0;
+    $('.weight').each(function() {
+        var value = $(this).text();
+        sum += parseFloat(value);
+    });
+    if (sum !== 100) {
+        alert("Please make sure allocations add to 100%")
+    } else {
+        $('#weight-total').text(sum + '%');
+    };
+}
 
-  function getWeightedReturns () {
+function getWeightedReturns() {
     var weightArr = 0;
-    $('.new-row').each(function (i, row) {
-      var indWeight = $(row).children('.weight').text();
-      var indGain = $(row).children('.gain').text();
-      var weightGain = (parseFloat(indWeight) * parseFloat(indGain)) / 100;
-      weightArr += weightGain;
+    $('.new-row').each(function(i, row) {
+        var indWeight = $(row).children('.weight').text();
+        var indGain = $(row).children('.gain').text();
+        var weightGain = (parseFloat(indWeight) * parseFloat(indGain)) / 100;
+        weightArr += weightGain;
     })
     var finalPortVal = Math.floor($('#port-value').val() * (1 + (weightArr / 100)));
     $('#market-value-total').text('$' + finalPortVal);
     $('#return-total').text(weightArr + '%');
     if (weightArr > 0) {
-      $('.top-row').css("background-color", "#00FF00");
+        $('.top-row').css("background-color", "#00FF00");
     } else {
-      $('.top-row').css("background-color", "#e52b09");
+        $('.top-row').css("background-color", "#e52b09");
     }
-  }
+}
